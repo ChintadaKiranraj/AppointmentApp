@@ -1,0 +1,75 @@
+.appoint-list-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.strFilterButton {
+  border-style: solid;
+
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 5px;
+  color: blueviolet;
+  width: 100px;
+  height: 30px;
+  padding-bottom: 25px;
+  background-color: transparent;
+  border-color: #8b5cf6;
+}
+
+.form-form-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+.Ul-list-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+.addButton {
+  background-color: blueviolet;
+  border-radius: 5px;
+  border-style: none;
+  color: #ffffff;
+  padding: 5px;
+  width: 50px;
+}
+
+.input-title {
+  color: #131415;
+  font-family: 'Roboto';
+  font-size: 15px;
+  border: 1px solid #7e858e;
+  border-radius: 4px;
+  height: 40px;
+  padding-left: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+  outline: none;
+  font-weight: 800;
+  width: 300px;
+}
+.App-content {
+  background-image: linear-gradient(to bottom, #fbc7d4, #8b5cf6);
+  padding: 10%;
+  min-height: 100vh;
+}
+.app-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+}
+.appointmentHead {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+  color: #171f46;
+}
