@@ -5,14 +5,23 @@ import AppointmentItem from '../AppointmentItem'
 import './index.css'
 
 class Appointments extends Component {
-  state = {appointmentList: [], Title: '', date: ''}
+  state = {appointmentList: [], Title: '', date: '', isActiveFilter: false}
 
-  getStaredAppoint = () => {
+  onClickFilter = () => {
     this.setState(prevSta => ({
-      appointmentList: prevSta.appointmentList.filter(
-        each => each.isStared === true,
-      ),
+      isActiveFilter: !prevSta.isActiveFilter,
     }))
+  }
+
+  getFilteredAppointmentsList = () => {
+    const {appointmentList, isActiveFilter} = this.state
+
+    if (isActiveFilter) {
+      return appointmentList.filter(
+        eachTransaction => eachTransaction.isStared === true,
+      )
+    }
+    return appointmentList
   }
 
   getClickedStarStatus = id => {
@@ -57,10 +66,9 @@ class Appointments extends Component {
   }
 
   render() {
-    const {appointmentList, date, Title} = this.state
-    console.log(appointmentList)
-    console.log(Title)
-    console.log(date)
+    const {date, Title} = this.state
+    const filteredAppointmentList = this.getFilteredAppointmentsList()
+
     return (
       <div className="App-content">
         <div className="app-card">
@@ -111,14 +119,14 @@ class Appointments extends Component {
             <button
               type="button"
               className="strFilterButton"
-              onClick={this.getStaredAppoint}
+              onClick={this.onClickFilter}
             >
               Starred
             </button>
           </div>
 
           <ul className="appoint-list-container">
-            {appointmentList.map(each => (
+            {filteredAppointmentList.map(each => (
               <AppointmentItem
                 eachAppointment={each}
                 key={each.id}
